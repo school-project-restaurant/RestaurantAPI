@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Lume.Application\Lume.Application.csproj" />
+    </ItemGroup>
+
 </Project>
