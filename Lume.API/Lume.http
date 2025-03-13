@@ -1,0 +1,6 @@
+@Lume_HostAddress = http://localhost:5155
+
+GET {{Lume_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lume.API", "Lume.API\Lume.API.csproj", "{81293F32-408B-40D9-B620-E1F1365A4493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lume.Application", "Lume.Application\Lume.Application.csproj", "{BB75F38F-54D7-473F-8A1D-CC0DBF9E7AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lume.Domain", "Lume.Domain\Lume.Domain.csproj", "{7417A78D-DB2A-4953-9CD5-BA5D945368B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lume.Infrastructure", "Lume.Infrastructure\Lume.Infrastructure.csproj", "{CBA97D27-1E0B-44B2-8605-D159C98426E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81293F32-408B-40D9-B620-E1F1365A4493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81293F32-408B-40D9-B620-E1F1365A4493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81293F32-408B-40D9-B620-E1F1365A4493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81293F32-408B-40D9-B620-E1F1365A4493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB75F38F-54D7-473F-8A1D-CC0DBF9E7AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB75F38F-54D7-473F-8A1D-CC0DBF9E7AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB75F38F-54D7-473F-8A1D-CC0DBF9E7AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB75F38F-54D7-473F-8A1D-CC0DBF9E7AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7417A78D-DB2A-4953-9CD5-BA5D945368B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7417A78D-DB2A-4953-9CD5-BA5D945368B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7417A78D-DB2A-4953-9CD5-BA5D945368B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7417A78D-DB2A-4953-9CD5-BA5D945368B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA97D27-1E0B-44B2-8605-D159C98426E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA97D27-1E0B-44B2-8605-D159C98426E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA97D27-1E0B-44B2-8605-D159C98426E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA97D27-1E0B-44B2-8605-D159C98426E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
