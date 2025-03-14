@@ -66,6 +66,11 @@ Below is a brief overview of some key endpoints. For detailed API documentation,
 - **DELETE /restaurants/:id**  
   Remove a restaurant from the system.
 
+## Database scheme
+<p>
+   <img src="assets/database-mode.png">
+</p>
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
