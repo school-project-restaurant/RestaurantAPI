@@ -68,7 +68,7 @@ Below is a brief overview of some key endpoints. For detailed API documentation,
 
 ## Database scheme
 <p>
-   <img src="assets/database-mode.png">
+   <img src="assets/database-model.png">
 </p>
 
 ## License
