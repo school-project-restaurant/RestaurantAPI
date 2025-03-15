@@ -1,26 +1,26 @@
-# RestaurantAPI
+# RestaurantAPI User Guide
 
-RestaurantAPI is a RESTful API designed as part of a school project to manage restaurant data. It provides endpoints for handling various restaurant-related operations, including creating, reading, updating, and deleting information about restaurants, menus, orders, reservations, and more.
+RestaurantAPI is a RESTful API developed as part of a school project to manage restaurant data. This guide helps users understand how to set up and interact with the API.
 
 ## Features
 
-- **CRUD Operations:** Easily create, read, update, and delete restaurant data.
-- **Authentication:** Secure endpoints using JWT-based authentication.
-- **Modular Structure:** Clean and scalable code structure following best practices.
-- **Extensible:** Designed to be easily extended with additional features such as user management, order processing, and more.
+- **CRUD Operations**: Manage restaurant data, menus, orders, and reservations.
+- **Secure Authentication**: Endpoints secured using JWT-based authentication.
+- **Scalable & Modular**: Clean architecture following best practices.
+- **Extensible**: Supports additional features like user management and order processing.
 
 ## Technologies Used
 
-- **Backend Framework:** C# with ASP.NET Core
-- **Database:** PostgreSQL
-- **Authentication:** JSON Web Tokens (JWT)
-- **Development Tools:** Visual Studio, JetBrains Rider
+- **Backend**: C# with ASP.NET Core
+- **Database**: PostgreSQL
+- **Authentication**: JSON Web Tokens (JWT)
+- **Development Tools**: Visual Studio, JetBrains Rider
 
 ## Getting Started
 
-Follow these steps to set up the project locally.
-
 ### Prerequisites
+
+Before using RestaurantAPI, ensure you have the following installed:
 
 - [PostgreSQL](https://www.postgresql.org/)
 - [Visual Studio](https://visualstudio.microsoft.com/) or [JetBrains Rider](https://www.jetbrains.com/rider/)
@@ -28,45 +28,37 @@ Follow these steps to set up the project locally.
 ### Installation
 
 1. **Clone the repository:**
-
    ```bash
    git clone https://github.com/school-project-restaurant/Lume-Server.git
    cd Lume-Server
    ```
-
-2. **Set up the database:**
+2. **Configure the database:**
    - Ensure PostgreSQL is running.
-   - Update the `appsettings.json` file with your database connection string.
-
+   - Update the `appsettings.json` file with your database connection details.
 3. **Build and run the project:**
-
    ```bash
    dotnet build
    dotnet run
    ```
+   The API should now be accessible at [http://localhost:5155](http://localhost:5155).
 
-   The server should now be running on [http://localhost:5155](http://localhost:5155) or the configured port.
+## API Usage
 
-## API Endpoints
-## TODO
-Below is a brief overview of some key endpoints. For detailed API documentation, please refer to the [API documentation](./API_DOCUMENTATION.md) (if available) or check the code comments.
+### Available Endpoints
 
-- **GET /restaurants**  
-  Retrieve a list of all restaurants.
+Below is a summary of the core endpoints. For a full reference, see the [API Documentation](./API_DOCUMENTATION.md) (if available).
 
-- **GET /restaurants/:id**  
-  Retrieve detailed information about a specific restaurant.
+#### Restaurants
+- **GET /restaurants** – Fetch all restaurants.
+- **GET /restaurants/{id}** – Retrieve details of a specific restaurant.
+- **POST /restaurants** – Add a new restaurant.
+- **PUT /restaurants/{id}** – Update an existing restaurant.
+- **DELETE /restaurants/{id}** – Remove a restaurant.
 
-- **POST /restaurants**  
-  Create a new restaurant entry.
+## Database Schema
 
-- **PUT /restaurants/:id**  
-  Update an existing restaurant's details.
+The database structure is outlined in the diagram below:
 
-- **DELETE /restaurants/:id**  
-  Remove a restaurant from the system.
-
-## Database scheme
 <p>
    <img src="assets/database-model.png">
 </p>
