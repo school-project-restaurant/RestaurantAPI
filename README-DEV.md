@@ -1,155 +1,111 @@
-Developer Guide - RestaurantAPI
+# Developer Guide - Lume-Server
 
-This document provides instructions and guidelines for developers contributing to the RestaurantAPI project.
+This document provides instructions and guidelines for developers contributing to the **Lume-Server** project.
 
-1. Project Structure
+## 1. Project Structure
 
-/RestaurantAPI
-│── /Controllers       # API controllers
-│── /Models            # Database models
-│── /Data              # Database context and migrations
-│── /Services          # Business logic services
-│── /Repositories      # Data access layer
-│── /Middlewares       # Custom middlewares
-│── /DTOs              # Data Transfer Objects
-│── /Utils             # Utility classes/helpers
-│── Program.cs         # Main entry point
-│── appsettings.json   # Configuration file
-│── README.md          # General project information
-│── README-DEV.md      # Developer guide (this file)
+```markdown
+/Lume.API              # Handles API endpoints and request routing
+│── /Controllers       # API controllers managing requests and responses
+│── Program.cs         # Main entry point of the application
+│── appsettings.json   # Configuration file for the API settings
+│── Lume.http          # Collection of mock HTTP requests for testing
 
-2. Getting Started
+/Lume.Application      # Contains business logic, use cases, and service interfaces
+│── /Prenotations      # Manages prenotation services and related DTOs
+│   │── IPrenotationService.cs  # Interface defining prenotation service methods
+│   │── PrenotationService.cs  # Implementation of prenotation services
+│── /Extensions        # Application-level extensions for dependency injection
+│   │── ServiceCollectionExtensions.cs  # Service registrations and configurations
 
-Prerequisites
+/Lume.Domain           # Core domain models and business rules
+│── /Repositories      # Defines repository interfaces for database interactions
+│   │── IPrenotationRepository.cs  # Interface for prenotation data access
 
-.NET SDK 6.0+ - Download
+/Lume.Infrastructure   # Implementation of data persistence and external service integrations
+│── /Extensions        # Infrastructure-level extensions
+│   │── ServiceCollectionExtensions.cs  # Registers infrastructure services
+│── /Persistence       # Database access and repository implementations
+│   │── /Repositories  # Implements repository interfaces
+│   │   │── PrenotationRepository.cs  # Concrete repository for prenotations
+│   │── RestaurantDbContext.cs  # Database context handling entity mappings
+```
 
-SQL Server - Download
+## 2. Getting Started
 
-Visual Studio / JetBrains Rider / VS Code
+### Prerequisites
 
-Postman / Swagger for API testing
+- **.NET SDK 9.0+** - [Download](https://dotnet.microsoft.com/download)
+- **PostgreSQL** - [Download](https://www.postgresql.org/download/)
+- **Visual Studio / JetBrains Rider**
 
-Setup Instructions
+### Setup Instructions
 
-Clone the repository:
+1. **Clone the repository:**
 
-git clone https://github.com/school-project-restaurant/RestaurantAPI.git
-cd RestaurantAPI
+   ```bash
+   git clone https://github.com/school-project-restaurant/Lume-Server.git
+   cd Lume-Server
+   ```
 
-Configure Environment Variables:
-Create a .env file or update appsettings.json with:
+2. **Run Database Migrations:**
 
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=RestaurantDB;User Id=sa;Password=yourpassword;"
-  },
-  "JwtSettings": {
-    "Secret": "YourSuperSecretKey",
-    "Issuer": "RestaurantAPI",
-    "Audience": "RestaurantUsers"
-  }
-}
+   ```bash
+   dotnet ef database update
+   ```
 
-Run Database Migrations:
+3. **Start the API:**
 
-dotnet ef database update
+   ```bash
+   dotnet run
+   ```
 
-Start the API:
+   The API should now be running on **[http://localhost:5155](http://localhost:5155)**
 
-dotnet run
+## 3. API Development Guidelines
 
-The API should now be running on http://localhost:5000 (default ASP.NET port).
+### Coding Standards
 
-3. API Development Guidelines
+- Follow **C# naming conventions**.
+- Use **dependency injection** instead of static classes.
+- Separate **business logic (Services)** from **data access (Repositories)**.
+- Always return **DTOs** instead of direct database models.
 
-Coding Standards
+### API Documentation
 
-Follow C# naming conventions.
+- **Swagger UI** is available at **`/swagger`**.
 
-Use dependency injection instead of static classes.
+### Error Handling
 
-Separate business logic (Services) from data access (Repositories).
+- Use **middleware** for **global exception handling**.
+- Return appropriate **HTTP status codes** (e.g., `400 Bad Request`, `500 Internal Server Error`).
 
-Always return DTOs instead of direct database models.
+## 4. Contributing
 
-API Documentation
+### Branching Strategy
 
-Swagger UI is available at /swagger.
+- `master` → Production-ready code
+- `dev` → Ongoing development
+- `feature/{feature-name}` → New features
+- `bugfix/{issue-name}` → Bug fixes
+- `docs` → Documentation
 
-Use XML Comments in controller methods for API documentation.
-
-Error Handling
-
-Use middleware for global exception handling.
-
-Return appropriate HTTP status codes (e.g., 400 Bad Request, 500 Internal Server Error).
-
-4. Contributing
-
-Branching Strategy
-
-main → Production-ready code
-
-dev → Ongoing development
-
-feature/{feature-name} → New features
-
-bugfix/{issue-name} → Bug fixes
-
-Commit Message Convention
+### Commit Message Convention
 
 Follow this format:
 
+```bash
 feat: Add reservation endpoint
 fix: Correct SQL query in restaurant service
 refactor: Optimize authentication logic
+```
 
-Pull Requests
+### Pull Requests
 
-Create a new branch before working on an issue.
+- **Create a new branch** before working on an issue.
+- Ensure **code is formatted** and **unit tests pass**.
 
-Ensure code is formatted and unit tests pass.
+## 5. Testing (TODO)
 
-Add a detailed PR description.
+## 6. Deployment (TODO)
 
-5. Testing
-
-Unit Tests
-
-Located in /Tests folder.
-
-Run tests with:
-
-dotnet test
-
-Postman Collection
-
-Import the provided Postman collection (docs/Postman_Collection.json).
-
-Test endpoints before merging changes.
-
-6. Deployment
-
-Docker (Optional)
-
-Build and run using Docker:
-
-docker build -t restaurant-api .
-docker run -p 5000:5000 restaurant-api
-
-CI/CD
-
-GitHub Actions is configured for automatic builds.
-
-Merging into main triggers an automated deployment.
-
-7. Contact & Support
-
-For any questions, reach out via:
-
-GitHub Issues
-
-Project Slack/Discord Channel
-
-Email: team-email@example.com
